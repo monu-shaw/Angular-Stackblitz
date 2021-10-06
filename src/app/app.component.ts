@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './service/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent  {
-  name = 'Angular';
+export class AppComponent implements OnInit {
+  title = 'random-card';
+  user: any;
+  constructor(
+    private userService: UserService,
+    private toastr: ToastrService
+  ) {}
+  ngOnInit() {
+    this.userService.getUser().subscribe(
+      (user: any) => {
+        this.user = user.result[0];
+      },
+      (err) => {
+        this.toastr.error(err.status, 'OOPS');
+      }
+    );
+  }
 }
