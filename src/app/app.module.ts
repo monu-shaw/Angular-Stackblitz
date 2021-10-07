@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { HelloComponent } from './hello.component';
     ToastrModule.forRoot(),
     FontAwesomeModule,
   ],
-  declarations: [AppComponent, HelloComponent],
+  declarations: [AppComponent, HelloComponent, CardComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

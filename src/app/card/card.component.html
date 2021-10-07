@@ -1,0 +1,14 @@
+<div class="card mx-auto">
+  <div class="card-body text-center">
+    <img
+      width="150"
+      height="150"
+      [src]="user.picture?.large"
+      alt=""
+      class="card-img rounded-circle img-thumbnail border-danger"
+    />
+    <h3 class="text-primary fw-bold">
+      {{ user.name?.title }} {{ user.name?.first }} {{ user.name?.last }}
+    </h3>
+  </div>
+</div>

@@ -14,10 +14,14 @@ export class AppComponent implements OnInit {
     private userService: UserService,
     private toastr: ToastrService
   ) {}
+  reload() {
+    window.location.reload();
+  }
   ngOnInit() {
     this.userService.getUser().subscribe(
       (user: any) => {
-        this.user = user.result[0];
+        this.user = user.results[0];
+        console.log(this.user);
       },
       (err) => {
         this.toastr.error(err.status, 'OOPS');
