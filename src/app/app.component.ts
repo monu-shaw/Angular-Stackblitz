@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
     this.userService.getUser().subscribe(
       (user: any) => {
         this.user = user.results[0];
-        console.log(this.user);
       },
       (err) => {
         this.toastr.error(err.status, 'OOPS');

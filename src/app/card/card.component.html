@@ -7,8 +7,10 @@
       alt=""
       class="card-img rounded-circle img-thumbnail border-danger"
     />
+
     <h3 class="text-primary fw-bold">
-      {{ user.name?.title }} {{ user.name?.first }} {{ user.name?.last }}
+      <fa-icon [icon]="faS"></fa-icon> {{ user.name?.title }}.
+      {{ user.name?.first }} {{ user.name?.last }}
     </h3>
   </div>
 </div>
